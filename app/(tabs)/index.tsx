@@ -1,31 +1,46 @@
-import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from '@/components/Themed';
+import { StyleSheet, Image, Text, View } from 'react-native';
+import profile from '@/assets/images/download.jpeg';
+import React from 'react';
 
-export default function TabOneScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
-    </View>
+
+export default function TabOne() {
+  return(
+  <View style ={styles.view}>
+    <Image source={profile} style = {styles.PFP}></Image>
+    <Text style = {styles.text}> Welcome To Eri's App </Text>
+  </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  view: {
+    display: 'flex',
+    color: 'black',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+
   },
-  title: {
-    fontSize: 20,
+  text:{
+    color: 'coral',
+    textAlign: 'center',
     fontWeight: 'bold',
+    fontSize: 50,
+    fontFamily: 'Norwester'
+                                   
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+    PFP: {
+    height: 178,
+    width: 290,
+    borderRadius: 100,
+    bottom: 100,
+    shadowColor: "000",
+    shadowOffset: {width: 0,height: 100},
+    shadowOpacity: 0.8,
+    shadowRadius: 8,
+    elevation: 10,
+
   },
-});
+}); 
+ 
